@@ -1,0 +1,37 @@
+[
+    {
+        "category_id": "C1",
+        "category_name": "Smartphones",
+        "description": "Latest smartphones with advanced features and powerful performance."
+    },
+    {
+        "category_id": "C2",
+        "category_name": "Laptops",
+        "description": "High-performance laptops for work, creativity, and gaming."
+    },
+    {
+        "category_id": "C3",
+        "category_name": "Wearables",
+        "description": "Smartwatches and fitness trackers to help you stay connected and active."
+    },
+    {
+        "category_id": "C4",
+        "category_name": "Tablets",
+        "description": "Tablets for productivity and entertainment on the go."
+    },
+    {
+        "category_id": "C5",
+        "category_name": "Accessories",
+        "description": "Essential accessories including headphones, chargers, and speakers."
+    },
+    {
+        "category_id": "C6",
+        "category_name": "Gaming",
+        "description": "Gaming consoles, laptops, and accessories for immersive gaming experiences."
+    },
+    {
+        "category_id": "C7",
+        "category_name": "Smart Home",
+        "description": "Smart devices to automate and simplify your home environment."
+    }
+]

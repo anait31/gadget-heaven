@@ -9,6 +9,7 @@ import ErrorPage from './components/ErrorPage/ErrorPage.jsx'
 import Statistic from './components/Statistic/Statistic.jsx'
 import Dashboard from './components/Dashboard/Dashboard.jsx'
 import AboutUs from './components/AboutUs/AboutUs.jsx'
+import Products from './components/Products/Products.jsx'
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,20 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
+        loader: () => fetch('../categories.json'),
+        children: [
+          {
+            path: '/',
+            loader: () => fetch('../ghproducts.json'),
+            element: <Products></Products>
+          },
+          {
+            path: '/category/:category_id',
+            loader: () => fetch('../ghproducts.json'),
+            element: <Products></Products>
+          }
+
+        ]
       },
       {
         path: '/statistic',
