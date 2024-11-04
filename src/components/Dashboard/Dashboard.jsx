@@ -49,6 +49,11 @@ const Dashboard = () => {
     }, [wishlistProducts])
 
     const totalCost = selectedProducts.reduce((total, product) => total + product.price, 0);
+
+    const handleSortByPrice = () => {
+        const sortedProducts = [...selectedProducts].sort((a, b) => b.price - a.price);
+        setSelectedProducts(sortedProducts);
+    };
     return (
         <div>
             <div className="bg-[#9538E2] text-white text-center py-6 space-y-3 rounded-xl">
@@ -66,7 +71,7 @@ const Dashboard = () => {
                             <h2 className="text-xl font-bold">Cart</h2>
                             <div className="flex space-x-6 items-center">
                                 <h2 className="text-xl font-bold">Total Cost: {totalCost}$</h2>
-                                <button className="border-2 px-4 py-[6px] rounded-lg border-[#9538E2]">Sort by Price:</button>
+                                <button onClick={handleSortByPrice} className="border-2 px-4 py-[6px] rounded-lg border-[#9538E2]">Sort by Price:</button>
                                 <button className="bg-[#9538E2] px-4 py-2 rounded-lg text-white">Purchase</button>
                             </div>
                         </div>
