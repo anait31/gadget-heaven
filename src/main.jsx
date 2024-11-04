@@ -10,6 +10,7 @@ import Statistic from './components/Statistic/Statistic.jsx'
 import Dashboard from './components/Dashboard/Dashboard.jsx'
 import AboutUs from './components/AboutUs/AboutUs.jsx'
 import Products from './components/Products/Products.jsx'
+import ProductDetails from './components/ProductDetails/ProductDetails.jsx'
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,11 @@ const router = createBrowserRouter([
           }
 
         ]
+      },
+      {
+        path: '/product/:product_id',
+        element: <ProductDetails></ProductDetails>,
+        loader: () => fetch('../ghproducts.json')
       },
       {
         path: '/statistic',
