@@ -1,11 +1,12 @@
 import { useLoaderData } from "react-router-dom";
-import { getLocalStorageData } from "../../utilities/utilities";
+import { getLocalStorageData, getWishlistLocalStorageData } from "../../utilities/utilities";
 import { useEffect, useState } from "react";
 import Cart from "../Cart/Cart";
+import Wishlist from "../Wishlist/Wishlist";
 
 const Dashboard = () => {
     const [selectedProducts, setSelectedProducts] = useState([]);
-    // cosnt [selectedWishlist, setSelectedWishlist] = useState([]);
+    const [selectedWishlist, setSelectedWishlist] = useState([]);
     const [isActive, setIsActive] = useState({
         status: true
     });
@@ -32,10 +33,8 @@ const Dashboard = () => {
         }
     }
 
-
-
-
     const products = useLoaderData();
+    const wishlistProducts = useLoaderData()
 
     useEffect(() => {
         const productsId = getLocalStorageData();
@@ -43,7 +42,13 @@ const Dashboard = () => {
         setSelectedProducts(selectedProduct)
     }, [])
 
+    useEffect(() => {
+        const wishlistProductId = getWishlistLocalStorageData();
+        const selectedWishlist = wishlistProducts.filter(product => wishlistProductId.includes(product.product_id))
+        setSelectedWishlist(selectedWishlist);
+    }, [wishlistProducts])
 
+    const totalCost = selectedProducts.reduce((total, product) => total + product.price, 0);
     return (
         <div>
             <div className="bg-[#9538E2] text-white text-center py-6 space-y-3 rounded-xl">
@@ -60,7 +65,7 @@ const Dashboard = () => {
                         <div className="flex justify-between items-center py-6">
                             <h2 className="text-xl font-bold">Cart</h2>
                             <div className="flex space-x-6 items-center">
-                                <h2 className="text-xl font-bold">Total Cost:</h2>
+                                <h2 className="text-xl font-bold">Total Cost: {totalCost}$</h2>
                                 <button className="border-2 px-4 py-[6px] rounded-lg border-[#9538E2]">Sort by Price:</button>
                                 <button className="bg-[#9538E2] px-4 py-2 rounded-lg text-white">Purchase</button>
                             </div>
@@ -72,7 +77,12 @@ const Dashboard = () => {
                         </div>
                     </div> :
                     <div className="py-6">
-                        <h2 className="text-xl font-bold">Wishlist</h2>
+                        <h2 className="text-xl font-bold pb-6">Wishlist</h2>
+                        <div>
+                            {
+                                selectedWishlist.map((wishlist, idx) => <Wishlist key={idx} wishlist={wishlist}></Wishlist>)
+                            }
+                        </div>
                     </div>
             }
         </div>

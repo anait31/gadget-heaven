@@ -33,7 +33,6 @@ const router = createBrowserRouter([
             loader: () => fetch('../ghproducts.json'),
             element: <Products></Products>
           }
-
         ]
       },
       {

@@ -31,7 +31,7 @@ const getWishlistLocalStorageData = () => {
 }
 
 const saveWishlistToLocalStorage = (id) => {
-    const wilslistProduct = getLocalStorageData();
+    const wilslistProduct = getWishlistLocalStorageData();
     if (wilslistProduct.includes(id)) {
         alert('Product already exist')
     }

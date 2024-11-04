@@ -19,7 +19,6 @@ const ProductDetails = () => {
     const handleAddToWishlist = (id) => {
         saveWishlistToLocalStorage(id)
     }
-    console.log(productPrice, price)
 
     return (
         <div className="relative">
