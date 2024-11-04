@@ -2,16 +2,18 @@ import { Link, NavLink } from "react-router-dom";
 import './Header.css'
 import { FiShoppingCart } from "react-icons/fi";
 import { FaRegHeart } from "react-icons/fa6";
+import { getLocalStorageData } from "../../utilities/utilities";
 
 
 const Header = () => {
+    const products = getLocalStorageData();
 
 
     const links = <>
-    <li><NavLink to={'/'}>Home</NavLink></li>
-    <li><NavLink to={'/statistic'}>Statistic</NavLink></li>
-    <li><NavLink to={'/dashboard'}>Dashboard</NavLink></li>
-    <li><NavLink to={'/about-us'}>About Us</NavLink></li>
+        <li><NavLink to={'/'}>Home</NavLink></li>
+        <li><NavLink to={'/statistic'}>Statistic</NavLink></li>
+        <li><NavLink to={'/dashboard'}>Dashboard</NavLink></li>
+        <li><NavLink to={'/about-us'}>About Us</NavLink></li>
     </>
 
     return (
@@ -47,13 +49,25 @@ const Header = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <button className="btn btn-ghost btn-circle">
-                        <FiShoppingCart></FiShoppingCart>
-                    </button>
+                    <div className="indicator">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="h-5 w-5"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth="2"
+                                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                        <span className="badge badge-sm indicator-item">8</span>
+                    </div>
                     <button className="btn btn-ghost btn-circle">
                         <div className="indicator">
                             <FaRegHeart></FaRegHeart>
-                            <span className="badge badge-xs badge-primary indicator-item"></span>
+                            <span className="badge badge-sm indicator-item">8</span>
                         </div>
                     </button>
                 </div>

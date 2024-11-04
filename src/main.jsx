@@ -48,6 +48,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/dashboard',
+        loader: () => fetch('../ghproducts.json'),
         element: <Dashboard></Dashboard>
       },
       {
