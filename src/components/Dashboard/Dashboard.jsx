@@ -3,6 +3,7 @@ import { getLocalStorageData, getWishlistLocalStorageData } from "../../utilitie
 import { useEffect, useState } from "react";
 import Cart from "../Cart/Cart";
 import Wishlist from "../Wishlist/Wishlist";
+import { Helmet } from "react-helmet";
 
 const Dashboard = () => {
     const [selectedProducts, setSelectedProducts] = useState([]);
@@ -67,6 +68,9 @@ const Dashboard = () => {
 
     return (
         <div className="max-w-7xl mx-auto">
+            <Helmet>
+                <title>Dashboard - Gadget heaven</title>
+            </Helmet>
             <div className="bg-[#9538E2] text-white text-center py-6 space-y-3 rounded-xl">
                 <h2 className="text-2xl font-bold">Dashboard</h2>
                 <p>Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!</p>
