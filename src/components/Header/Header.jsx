@@ -1,24 +1,35 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import './Header.css'
 import { FiShoppingCart } from "react-icons/fi";
 import { FaRegHeart } from "react-icons/fa6";
 import { getLocalStorageData } from "../../utilities/utilities";
+import { useState, useEffect } from "react";
 
 
 const Header = () => {
+    const [headerBg, setHeaderBg] = useState(false);
     const products = getLocalStorageData();
+    const { pathname } = useLocation();
 
+    useEffect(() => {
+        if (pathname === "/") {
+            setHeaderBg(true); // Purple color for home page
+        }
+        else {
+            setHeaderBg(false)
+        }
+    }, [pathname]);
 
     const links = <>
-        <li><NavLink to={'/'}>Home</NavLink></li>
+        {/* <li><NavLink to={'/'}>Home</NavLink></li> */}
         <li><NavLink to={'/statistic'}>Statistic</NavLink></li>
         <li><NavLink to={'/dashboard'}>Dashboard</NavLink></li>
         <li><NavLink to={'/about-us'}>About Us</NavLink></li>
     </>
 
     return (
-        <div>
-            <div className="navbar bg-base-100 max-w-7xl mx-auto">
+        <div className={`${headerBg && 'bg-[#9538E2] text-white'}`}>
+            <div className="navbar max-w-7xl mx-auto">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
