@@ -21,7 +21,7 @@ const ProductDetails = () => {
     }
 
     return (
-        <div className="relative">
+        <div className="relative max-w-7xl mx-auto">
             <div className="bg-[#9538E2] pt-6 pb-32 rounded-2xl">
                 <h2 className="text-center py-4 text-3xl font-bold text-white">Product Details</h2>
                 <p className="text-center mb-14 text-white">Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!</p>

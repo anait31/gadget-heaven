@@ -66,7 +66,7 @@ const Dashboard = () => {
     };
 
     return (
-        <div>
+        <div className="max-w-7xl mx-auto">
             <div className="bg-[#9538E2] text-white text-center py-6 space-y-3 rounded-xl">
                 <h2 className="text-2xl font-bold">Dashboard</h2>
                 <p>Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!</p>

@@ -11,7 +11,7 @@ const getLocalStorageData = () => {
 const saveToLocalStorage = (id) => {
     const product = getLocalStorageData();
     if (product.includes(id)) {
-        alert('Hi')
+        alert('Item Already Exist')
     }
     else {
         product.push(id);

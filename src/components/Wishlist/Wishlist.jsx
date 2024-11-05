@@ -4,7 +4,7 @@ import { MdDelete } from "react-icons/md";
 const Wishlist = ({ wishlist, handleDeleteWishlistProduct }) => {
     const { product_id, product_title, product_image, price, description } = wishlist;
     return (
-        <div>
+        <div className='max-w-7xl mx-auto'>
             <div className="flex justify-between rounded-lg items-center border-2 mb-3 p-4">
                 <div className="flex items-center gap-4">
                     <img className="w-24 object-cover" src={product_image} alt="" />
