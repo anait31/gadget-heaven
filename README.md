@@ -2,7 +2,7 @@
 
 Welcome to GH Store, a modern e-commerce website built with React. This website allows users to browse and purchase a variety of products in a user-friendly interface. The project is built with React.js and uses modern web development tools.
 
-Live Website Link: https://gh-store.surge.sh/
+# Live Website Link: https://gh-store.surge.sh/
 
 Requirement Document Link
 The full requirements and specifications for this project can be found in the following document: https://drive.google.com/file/d/1GFVF8UUMruQrMkArK1OyrE6Dv3YCrGeC/view?usp=sharing
