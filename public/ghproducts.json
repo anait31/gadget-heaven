@@ -24,6 +24,54 @@
         "other_field": "Warranty: 1 year"
     },
     {
+        "product_id": "GH103",
+        "product_title": "Smartphone Mini 5",
+        "product_image": "https://cdn.cs.1worldsync.com/93/1e/931ef0bd-4d01-466e-b1a3-61cd956df4ca.jpg",
+        "category": "Smartphones",
+        "price": 699,
+        "description": "Compact yet powerful smartphone with an OLED display and excellent battery life.",
+        "specification": ["5.4-inch OLED display", "128GB storage", "Dual camera", "5G enabled"],
+        "availability": true,
+        "rating": 4.3,
+        "other_field": "Warranty: 1 year"
+      },
+      {
+        "product_id": "GH104",
+        "product_title": "Smartphone Max Pro 7",
+        "product_image": "https://www.gizchina.com/wp-content/uploads/images/2022/10/maxresdefault.jpg",
+        "category": "Smartphones",
+        "price": 1199,
+        "description": "Premium smartphone with an immersive 6.9-inch display and high-performance chipset.",
+        "specification": ["6.9-inch Dynamic AMOLED display", "512GB storage", "Quad-camera system", "5G enabled"],
+        "availability": true,
+        "rating": 4.8,
+        "other_field": "Warranty: 1 year"
+      },
+      {
+        "product_id": "GH105",
+        "product_title": "Smartphone Ultra 12",
+        "product_image": "https://i.ytimg.com/vi/dUOQFTG83VA/maxresdefault.jpg",
+        "category": "Smartphones",
+        "price": 1399,
+        "description": "Ultimate flagship smartphone with a massive 108MP camera and 100x space zoom.",
+        "specification": ["6.9-inch Super AMOLED display", "128GB storage", "108MP camera", "5G enabled"],
+        "availability": true,
+        "rating": 4.9,
+        "other_field": "Warranty: 1 year"
+      },
+      {
+        "product_id": "GH106",
+        "product_title": "Smartphone Pro V",
+        "product_image": "https://149367133.v2.pressablecdn.com/wp-content/uploads/2024/05/240521-GadgetMatch-HUAWEI-Pura-70-Pro-vs-HONOR-Magic6-Pro-Camera-Shootout-Back-1.jpg",
+        "category": "Smartphones",
+        "price": 799,
+        "description": "Balanced smartphone offering powerful performance, all-day battery, and great camera.",
+        "specification": ["6.2-inch OLED display", "128GB storage", "Dual camera", "5G enabled"],
+        "availability": true,
+        "rating": 4.4,
+        "other_field": "Warranty: 1 year"
+      },
+    {
         "product_id": "GH201",
         "product_title": "Laptop Pro 15",
         "product_image": "https://m.media-amazon.com/images/I/61iVOmuO1pL._AC_UF1000,1000_QL80_.jpg",
@@ -106,18 +154,6 @@
         "availability": true,
         "rating": 4.8,
         "other_field": "Battery life: 20 hours"
-    },
-    {
-        "product_id": "GH502",
-        "product_title": "Portable Speaker",
-        "product_image": "https://media.wired.com/photos/66abec9ccb172c2e5de763bf/master/w_960,c_limit/Edifier-Stax-Spirit-S5-Headphones-Offwhite-Background-SOURCE-Amazon.jpg",
-        "category": "Accessories",
-        "price": 149,
-        "description": "Portable Bluetooth speaker with excellent bass and durability.",
-        "specification": ["Bluetooth 5.0", "Water-resistant", "12-hour battery life"],
-        "availability": true,
-        "rating": 4.4,
-        "other_field": "Warranty: 6 months"
     },
     {
         "product_id": "GH601",
