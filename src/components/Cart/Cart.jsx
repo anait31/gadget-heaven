@@ -1,6 +1,7 @@
 import { MdDelete } from "react-icons/md";
-const Cart = ({ product }) => {
+const Cart = ({ product, handleDeleteProduct }) => {
     const { product_id, product_title, product_image, category, price, description } = product;
+
     return (
         <div >
             <div className="flex justify-between rounded-lg items-center border-2 mb-3 p-4">
@@ -12,8 +13,10 @@ const Cart = ({ product }) => {
                         <p><span className="font-bold">Price:</span> {price}$</p>
                     </div>
                 </div>
-                <div className="text-2xl ">
-                    <MdDelete></MdDelete>
+                <div onClick={() => handleDeleteProduct(product_id)} className="text-2xl ">
+                    <button>
+                        <MdDelete></MdDelete>
+                    </button>
                 </div>
             </div>
         </div>

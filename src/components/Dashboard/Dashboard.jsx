@@ -11,6 +11,12 @@ const Dashboard = () => {
         status: true
     });
 
+    const handleDeleteProduct = (product_id) => {
+        // console.log(product_id)
+        const updatedProducts = selectedProducts.filter(product => product.product_id !== product_id);
+        setSelectedProducts(updatedProducts);
+    }
+
     const handleCartButoon = (status) => {
         if (status === 'cart') {
             setIsActive({
@@ -54,6 +60,7 @@ const Dashboard = () => {
         const sortedProducts = [...selectedProducts].sort((a, b) => b.price - a.price);
         setSelectedProducts(sortedProducts);
     };
+
     return (
         <div>
             <div className="bg-[#9538E2] text-white text-center py-6 space-y-3 rounded-xl">
@@ -77,7 +84,7 @@ const Dashboard = () => {
                         </div>
                         <div className="">
                             {
-                                selectedProducts.map((product, idx) => <Cart key={idx} product={product}></Cart>)
+                                selectedProducts.map((product, idx) => <Cart handleDeleteProduct={handleDeleteProduct} key={idx} product={product}></Cart>)
                             }
                         </div>
                     </div> :
