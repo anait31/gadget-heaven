@@ -12,9 +12,13 @@ const Dashboard = () => {
     });
 
     const handleDeleteProduct = (product_id) => {
-        // console.log(product_id)
         const updatedProducts = selectedProducts.filter(product => product.product_id !== product_id);
         setSelectedProducts(updatedProducts);
+    }
+
+    const handleDeleteWishlistProduct = (product_id) => {
+        const updatedWishlist = selectedWishlist.filter(wishlistProduct => wishlistProduct.product_id !== product_id);
+        setSelectedWishlist(updatedWishlist);
     }
 
     const handleCartButoon = (status) => {
@@ -92,7 +96,7 @@ const Dashboard = () => {
                         <h2 className="text-xl font-bold pb-6">Wishlist</h2>
                         <div>
                             {
-                                selectedWishlist.map((wishlist, idx) => <Wishlist key={idx} wishlist={wishlist}></Wishlist>)
+                                selectedWishlist.map((wishlist, idx) => <Wishlist handleDeleteWishlistProduct={handleDeleteWishlistProduct} key={idx} wishlist={wishlist}></Wishlist>)
                             }
                         </div>
                     </div>

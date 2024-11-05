@@ -1,8 +1,8 @@
 import React from 'react';
 import { MdDelete } from "react-icons/md";
 
-const Wishlist = ({ wishlist }) => {
-    const { product_title, product_image, price, description } = wishlist;
+const Wishlist = ({ wishlist, handleDeleteWishlistProduct }) => {
+    const { product_id, product_title, product_image, price, description } = wishlist;
     return (
         <div>
             <div className="flex justify-between rounded-lg items-center border-2 mb-3 p-4">
@@ -16,7 +16,9 @@ const Wishlist = ({ wishlist }) => {
                     </div>
                 </div>
                 <div className="text-2xl ">
-                    <MdDelete></MdDelete>
+                    <button onClick={() => handleDeleteWishlistProduct(product_id)}>
+                        <MdDelete></MdDelete>
+                    </button>
                 </div>
             </div>
         </div>
