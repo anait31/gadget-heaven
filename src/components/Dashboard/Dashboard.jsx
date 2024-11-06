@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Navigate, useLoaderData, useNavigate } from "react-router-dom";
 import { getLocalStorageData, getWishlistLocalStorageData } from "../../utilities/utilities";
 import { useEffect, useState } from "react";
 import Cart from "../Cart/Cart";
@@ -17,10 +17,6 @@ const Dashboard = () => {
     const handleDeleteProduct = (product_id) => {
         const updatedProducts = selectedProducts.filter(product => product.product_id !== product_id);
         setSelectedProducts(updatedProducts);
-
-        const currentProductIds = getLocalStorageData(); // Assuming this function fetches all product ids from localStorage
-        const updatedProductIds = currentProductIds.filter(id => id !== product_id);
-        localStorage.setItem('cart', JSON.stringify(updatedProductIds));
         toast("Deleted Successfully!")
     }
 
@@ -75,8 +71,11 @@ const Dashboard = () => {
         setSelectedProducts(sortedProducts);
     };
 
+    const navigate = useNavigate()
+
     const handleModalCloseeButton = () => {
-        setSelectedProducts([])
+        setSelectedProducts([]);
+        navigate('/')
     }
 
     return (
