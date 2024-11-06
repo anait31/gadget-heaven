@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Cart from "../Cart/Cart";
 import Wishlist from "../Wishlist/Wishlist";
 import { Helmet } from "react-helmet";
+import { BsBagCheckFill } from "react-icons/bs";
 
 const Dashboard = () => {
     const [selectedProducts, setSelectedProducts] = useState([]);
@@ -66,6 +67,10 @@ const Dashboard = () => {
         setSelectedProducts(sortedProducts);
     };
 
+    const handleModalCloseeButton = () => {
+        setSelectedProducts([])
+    }
+
     return (
         <div className="max-w-7xl mx-auto">
             <Helmet>
@@ -77,7 +82,10 @@ const Dashboard = () => {
                 <div className="space-x-2">
                     <button onClick={() => handleCartButoon('cart')} className={`${isActive.status ? 'bg-white text-black' : ''} px-6 border-white py-3 rounded-md mr-4`}>Cart</button>
                     <button onClick={() => handleWishlist('wishlist')} className={`${isActive.status ? '' : 'bg-white text-black'} px-6 py-3 rounded-md mr-4`}>Wishlist</button>
+
                 </div>
+                {/* <Modal></Modal> */}
+
             </div>
             {
                 isActive.status ?
@@ -87,7 +95,23 @@ const Dashboard = () => {
                             <div className="flex space-x-6 items-center">
                                 <h2 className="text-xl font-bold">Total Cost: {totalCost}$</h2>
                                 <button onClick={handleSortByPrice} className="border-2 px-4 py-[6px] rounded-lg border-[#9538E2]">Sort by Price:</button>
-                                <button className="bg-[#9538E2] px-4 py-2 rounded-lg text-white">Purchase</button>
+                                <button onClick={() => document.getElementById('my_modal_5').showModal()} className={`bg-[#9538E2] px-4 py-2 rounded-lg text-white ${selectedProducts ? '' : 'm-6'}`}>Purchase</button>
+                                <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
+                                    <div className="modal-box text-center">
+                                        <div className="flex mb-3 text-3xl text-success justify-center">
+                                            <BsBagCheckFill></BsBagCheckFill>
+                                        </div>
+                                        <h3 className="font-bold text-2xl">Payment Successfully!</h3>
+                                        <p className="py-4">Thanks for purchasing</p>
+                                        <p className="">Total: {totalCost}$</p>
+                                        <div className="modal-action">
+                                            <form method="dialog">
+                                                {/* if there is a button in form, it will close the modal */}
+                                                <button onClick={handleModalCloseeButton} className="btn">Close</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </dialog>
                             </div>
                         </div>
                         <div className="">
