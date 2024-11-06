@@ -31,7 +31,7 @@ const ProductDetails = () => {
                 <p className="text-center mb-14 text-white">Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!</p>
             </div>
             <div className="md:flex justify-center gap-5 items-center border-2 mt-[-150px] rounded-2xl md:mx-24 p-8 bg-white mb-5">
-                <img className="h-96 mb-4 md:mb-0 rounded-lg" src={product_image} alt="" />
+                <img className="h-48 md:h-96 mb-4 md:mb-0 rounded-lg" src={product_image} alt="" />
                 <div className="space-y-3">
                     <h2 className="text-2xl font-bold">{product_title}</h2>
                     <p><span className="font-bold">Price:</span> {price}$</p>

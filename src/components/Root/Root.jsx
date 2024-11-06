@@ -6,7 +6,7 @@ const Root = () => {
     return (
         <div>
             <Header></Header>
-            <div className="min-h-[calc(100vh-400px)]">
+            <div className="min-h-[calc(100vh-464px)]">
                 <Outlet></Outlet>
             </div>
             <Footer></Footer>
