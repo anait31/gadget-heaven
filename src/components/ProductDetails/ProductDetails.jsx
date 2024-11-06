@@ -3,6 +3,7 @@ import { MdOutlineStarPurple500 } from "react-icons/md";
 import { FaRegHeart } from "react-icons/fa6";
 import { saveToLocalStorage, saveWishlistToLocalStorage } from "../../utilities/utilities";
 import { useState } from "react";
+import { toast } from "react-toastify";
 
 const ProductDetails = () => {
     const { product_id } = useParams();
@@ -10,14 +11,17 @@ const ProductDetails = () => {
     const product = products.find(product => product.product_id === product_id);
     const { product_title, product_image, rating, price, description, specification } = product;
     
+    
 
 
     const handleAddToCard = (id) => {
         saveToLocalStorage(id);
+        // toast("Added Successfully to Cart!")
     }
 
     const handleAddToWishlist = (id) => {
-        saveWishlistToLocalStorage(id)
+        saveWishlistToLocalStorage(id);
+        // toast("Added Successfully to Wishlist!")
     }
 
     return (
@@ -26,8 +30,8 @@ const ProductDetails = () => {
                 <h2 className="text-center py-4 text-3xl font-bold text-white">Product Details</h2>
                 <p className="text-center mb-14 text-white">Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!</p>
             </div>
-            <div className="md:flex justify-center items-center border-2 mt-[-150px] rounded-2xl md:mx-24 p-8 bg-white mb-5">
-                <img className="h-96 mb-4 md:mb-0" src={product_image} alt="" />
+            <div className="md:flex justify-center gap-5 items-center border-2 mt-[-150px] rounded-2xl md:mx-24 p-8 bg-white mb-5">
+                <img className="h-96 mb-4 md:mb-0 rounded-lg" src={product_image} alt="" />
                 <div className="space-y-3">
                     <h2 className="text-2xl font-bold">{product_title}</h2>
                     <p><span className="font-bold">Price:</span> {price}$</p>

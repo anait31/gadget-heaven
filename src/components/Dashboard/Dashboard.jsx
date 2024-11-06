@@ -5,6 +5,7 @@ import Cart from "../Cart/Cart";
 import Wishlist from "../Wishlist/Wishlist";
 import { Helmet } from "react-helmet";
 import { BsBagCheckFill } from "react-icons/bs";
+import { toast } from "react-toastify";
 
 const Dashboard = () => {
     const [selectedProducts, setSelectedProducts] = useState([]);
@@ -16,11 +17,18 @@ const Dashboard = () => {
     const handleDeleteProduct = (product_id) => {
         const updatedProducts = selectedProducts.filter(product => product.product_id !== product_id);
         setSelectedProducts(updatedProducts);
+
+        const currentProductIds = getLocalStorageData(); // Assuming this function fetches all product ids from localStorage
+        const updatedProductIds = currentProductIds.filter(id => id !== product_id);
+        localStorage.setItem('cart', JSON.stringify(updatedProductIds));
+        toast("Deleted Successfully!")
     }
 
     const handleDeleteWishlistProduct = (product_id) => {
         const updatedWishlist = selectedWishlist.filter(wishlistProduct => wishlistProduct.product_id !== product_id);
         setSelectedWishlist(updatedWishlist);
+        toast("Deleted Successfully!")
+        localStorage.removeItem('wishlish', product_id)
     }
 
     const handleCartButoon = (status) => {

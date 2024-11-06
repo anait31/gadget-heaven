@@ -1,3 +1,5 @@
+import { toast } from "react-toastify";
+
 const getLocalStorageData = () => {
     const storedData = localStorage.getItem('products');
     if (storedData) {
@@ -11,10 +13,11 @@ const getLocalStorageData = () => {
 const saveToLocalStorage = (id) => {
     const product = getLocalStorageData();
     if (product.includes(id)) {
-        alert('Item Already Exist')
+        toast('Item Already Exist to Cart')
     }
     else {
         product.push(id);
+        toast('Item Added Successfully to Cart!')
         const setToLocalStorage = JSON.stringify(product);
         localStorage.setItem('products', setToLocalStorage);
     }
@@ -33,10 +36,11 @@ const getWishlistLocalStorageData = () => {
 const saveWishlistToLocalStorage = (id) => {
     const wilslistProduct = getWishlistLocalStorageData();
     if (wilslistProduct.includes(id)) {
-        alert('Product already exist')
+        toast('Item already exist to Wishlist')
     }
     else {
         wilslistProduct.push(id);
+        toast('Item Added Successfully to Wishlist!')
         const setToLocalStorage = JSON.stringify(wilslistProduct);
         localStorage.setItem('wishlist', setToLocalStorage);
     }

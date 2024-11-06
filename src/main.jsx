@@ -12,6 +12,7 @@ import AboutUs from './components/AboutUs/AboutUs.jsx'
 import Products from './components/Products/Products.jsx'
 import ProductDetails from './components/ProductDetails/ProductDetails.jsx'
 import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const router = createBrowserRouter([
   {
