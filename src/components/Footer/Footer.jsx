@@ -2,13 +2,13 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
     return (
-        <footer className="text-center max-w-7xl mx-auto space-y-5 py-4">
+        <footer className="text-center max-w-7xl mx-auto space-y-5 py-12 px-4 md:px-0">
             <div className="space-y-2">
                 <h3 className="text-3xl font-bold">Gadget Heaven</h3>
                 <p>Leading the way in cutting-edge technology and innovation.</p>
             </div>
             <div className="divider"></div>
-            <div className="flex justify-around">
+            <div className="md:flex space-y-4 md:space-y-0 justify-around">
                 <div className="space-y-2">
                     <h4 className="text-xl font-semibold">Services</h4>
                     <ul>

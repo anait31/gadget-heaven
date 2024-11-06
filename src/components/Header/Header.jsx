@@ -52,7 +52,7 @@ const Header = () => {
                             {links}
                         </ul>
                     </div>
-                    <h2 className="text-2xl font-bold"><Link to={'/'}>Gadget Heaven</Link></h2>
+                    <h2 className="md:text-2xl font-bold"><Link to={'/'}>Gadget Heaven</Link></h2>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 space-x-2">

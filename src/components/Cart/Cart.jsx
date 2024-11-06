@@ -8,7 +8,7 @@ const Cart = ({ product, handleDeleteProduct }) => {
                 <div className="flex items-center gap-4">
                     <img className="w-24 object-cover" src={product_image} alt="" />
                     <div>
-                        <h3 className="text-2xl font-bold">{product_title}</h3>
+                        <h3 className=" text-xl md:text-2xl font-bold">{product_title}</h3>
                         <p>{description}</p>
                         <p><span className="font-bold">Price:</span> {price}$</p>
                     </div>

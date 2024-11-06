@@ -11,12 +11,14 @@ const Home = () => {
                 <title>Home - Gadget Heaven</title>
             </Helmet>
             <Banner></Banner>
-            <h2 className="text-center py-4 text-3xl font-bold">Explore Cutting-Edge Gadgets</h2>
-            <div className="flex gap-12 max-w-7xl mx-auto">
+            <h2 className="text-center py-4 text-xl md:text-3xl font-bold">Explore Cutting-Edge Gadgets</h2>
+            <div className="md:flex md:gap-12 px-4 md:px-0 max-w-7xl mx-auto space-y-6 md:space-y-0">
                 <div className="border-2 px-6 py-4 max-h-[450px] rounded-lg">
                     <Categories categories={categories}></Categories>
                 </div>
-                <Outlet></Outlet>
+                <div>
+                    <Outlet></Outlet>
+                </div>
             </div>
         </div>
     );

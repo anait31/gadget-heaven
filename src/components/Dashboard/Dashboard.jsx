@@ -76,7 +76,7 @@ const Dashboard = () => {
             <Helmet>
                 <title>Dashboard - Gadget heaven</title>
             </Helmet>
-            <div className="bg-[#9538E2] text-white text-center py-6 space-y-3 rounded-xl">
+            <div className="bg-[#9538E2] text-white text-center py-6 space-y-3 px-4 md:px-0 rounded-xl">
                 <h2 className="text-2xl font-bold">Dashboard</h2>
                 <p>Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!</p>
                 <div className="space-x-2">
@@ -90,10 +90,10 @@ const Dashboard = () => {
             {
                 isActive.status ?
                     <div>
-                        <div className="flex justify-between items-center py-6">
-                            <h2 className="text-xl font-bold">Cart</h2>
+                        <div className="md:flex justify-between items-center py-6">
+                            <h2 className="text-xl font-bold mb-2 md:mb-0">Cart</h2>
                             <div className="flex space-x-6 items-center">
-                                <h2 className="text-xl font-bold">Total Cost: {totalCost}$</h2>
+                                <h2 className="md:text-xl font-bold">Total: {totalCost}$</h2>
                                 <button onClick={handleSortByPrice} className="border-2 px-4 py-[6px] rounded-lg border-[#9538E2]">Sort by Price:</button>
                                 <button onClick={() => document.getElementById('my_modal_5').showModal()} className={`bg-[#9538E2] px-4 py-2 rounded-lg text-white ${selectedProducts ? '' : 'm-6'}`}>Purchase</button>
                                 <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
@@ -114,13 +114,13 @@ const Dashboard = () => {
                                 </dialog>
                             </div>
                         </div>
-                        <div className="">
+                        <div className="mx-4 md:mx-0">
                             {
                                 selectedProducts.map((product, idx) => <Cart handleDeleteProduct={handleDeleteProduct} key={idx} product={product}></Cart>)
                             }
                         </div>
                     </div> :
-                    <div className="py-6">
+                    <div className="py-6 mx-4 md:mx-0">
                         <h2 className="text-xl font-bold pb-6">Wishlist</h2>
                         <div>
                             {
