@@ -4,6 +4,7 @@ import { FiShoppingCart } from "react-icons/fi";
 import { FaRegHeart } from "react-icons/fa6";
 import { getLocalStorageData } from "../../utilities/utilities";
 import { useState, useEffect } from "react";
+import Login from "../Login/Login";
 
 
 
@@ -72,6 +73,7 @@ const Header = () => {
                             <FaRegHeart></FaRegHeart>
                         </div>
                     </button>
+                    <Login></Login>
                 </div>
             </div>
         </div>
